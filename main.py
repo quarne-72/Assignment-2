@@ -44,6 +44,11 @@ def cost_per_class(annual_cost, credits):
     return class_cost / CS1430_MEETINGS_PER_SEMESTER
 
 
+def cost_per_minute(annual_cost, credits):
+    """Give back the cost per minute of CS 1430 class time."""
+    return cost_per_class(annual_cost, credits) / 50
+
+
 # ---- PROGRAM ----
 
 def main():
@@ -61,6 +66,7 @@ def main():
         print("3. Cost per day")
         print("4. Cost per credit")
         print("5. Cost per CS 1430 class")
+        print("6. Cost per minute of CS 1430 class")
         print("Q. Quit")
 
         choice = input("Choose an option: ")
@@ -83,6 +89,9 @@ def main():
 
         elif choice == "5":
             print(f"Cost per CS 1430 class: ${cost_per_class(annual_cost, credits):.2f}")
+        
+        elif choice == "6":
+            print(f"Cost per minute of CS 1430 class: ${cost_per_minute(annual_cost, credits):.2f}")
 
         else:
             print("Invalid option. Please try again.")
